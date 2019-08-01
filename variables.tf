@@ -28,21 +28,10 @@ variable "name" {
   default = "bastion"
 }
 
-variable extra_tags {
-  type        = "list"
-  default     = []
-  description = "A list of tags to associate to the bastion instance."
-}
-
 variable "ami" {}
 
 variable "instance_type" {
   default = "t2.micro"
-}
-
-variable "instance_volume_size_gb" {
-  description = "The root volume size, in gigabytes"
-  default     = "8"
 }
 
 variable "iam_instance_profile" {}
@@ -55,10 +44,6 @@ variable "s3_bucket_name" {}
 
 variable "s3_bucket_uri" {
   default = ""
-}
-
-variable "enable_monitoring" {
-  default = true
 }
 
 variable "ssh_user" {
@@ -83,29 +68,6 @@ variable "region" {
 
 variable "vpc_id" {}
 
-variable "security_group_ids" {
-  description = "Comma seperated list of security groups to apply to the bastion."
-  default     = ""
-}
-
-variable "subnet_ids" {
-  default     = []
-  description = "A list of subnet ids"
-}
-
-variable "eip" {
+variable "subnet_id" {
   default = ""
-}
-
-variable "associate_public_ip_address" {
-  default = false
-}
-
-variable "key_name" {
-  default = ""
-}
-
-variable "apply_changes_immediately" {
-  description = "Whether to apply the changes at once and recreate auto-scaling group"
-  default     = false
 }
