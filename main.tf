@@ -63,7 +63,7 @@ resource "aws_instance" "bastion" {
   instance_type          = var.instance_type
   iam_instance_profile   = var.iam_instance_profile
   subnet_id              = var.subnet_id
-  vpc_security_group_ids = [aws_security_group.bastion.id]
+  vpc_security_group_ids = concat([aws_security_group.bastion.id], var.additional_security_group_ids)
   user_data              = data.template_file.user_data.rendered
 
   tags = {

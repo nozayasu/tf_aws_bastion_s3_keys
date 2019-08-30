@@ -62,6 +62,11 @@ variable "additional_user_data_script" {
   default = ""
 }
 
+variable "additional_security_group_ids" {
+  type        = "list"
+  default     = []
+}
+
 variable "region" {
   default = "eu-west-1"
 }
